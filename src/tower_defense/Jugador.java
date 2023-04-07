@@ -2,6 +2,7 @@
 package tower_defense;
 
 public class Jugador {
+<<<<<<< Updated upstream
     private String nombre;
     private Cola_Tropas tropas;
 
@@ -17,6 +18,16 @@ public class Jugador {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+=======
+    
+    private Cola_Tropas tropas;
+
+    public Jugador( Cola_Tropas tropas) {
+        
+        this.tropas = tropas;
+    }
+  
+>>>>>>> Stashed changes
 
     public Cola_Tropas getTropas() {
         return tropas;

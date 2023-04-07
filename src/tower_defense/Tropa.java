@@ -3,6 +3,7 @@ package tower_defense;
 
 
 public abstract class Tropa {
+<<<<<<< Updated upstream
     private int puntosDeVida;
    private int ataque;
    private int defensa;
@@ -19,6 +20,15 @@ public abstract class Tropa {
 
     public void setPuntosDeVida(int puntosDeVida) {
         this.puntosDeVida = puntosDeVida;
+=======
+    
+   private double ataque;
+   
+
+    public Tropa( double ataque) {
+       this.ataque = ataque;
+        
+>>>>>>> Stashed changes
     }
 
     public int getAtaque() {

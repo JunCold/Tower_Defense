@@ -4,11 +4,18 @@ package tower_defense;
 
 public class Caballero extends Tropa{
 
+<<<<<<< Updated upstream
     public Caballero(int puntosDeVida, int ataque, int defensa) {
         super(puntosDeVida, ataque, defensa);
+=======
+    public Caballero(double ataque) {
+        super(ataque);
+>>>>>>> Stashed changes
     }
 
+   
     @Override
+<<<<<<< Updated upstream
     public void atacar(Tropa enemigo) {
           if (enemigo instanceof Arquero) {
             enemigo.recibirAtaque(this.getAtaque() * 2);
@@ -17,15 +24,12 @@ public class Caballero extends Tropa{
         }else{
             enemigo.recibirAtaque(this.getAtaque());
         }
+=======
+    public void atacar(Castillo castillo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+>>>>>>> Stashed changes
     }
 
-    @Override
-    public void recibirAtaque(int cantidad) {
-        this.setPuntosDeVida(this.getPuntosDeVida()-cantidad);
-        if(this.getPuntosDeVida()<0){
-            this.setPuntosDeVida(0);
-        }
-    }
 
     
 
