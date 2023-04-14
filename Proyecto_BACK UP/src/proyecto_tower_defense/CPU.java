@@ -1,7 +1,7 @@
-
-package tower_defense;
+package proyecto_tower_defense;
 
 public class CPU {
+
     private Cola_Tropas tropas;
 
     public CPU(Cola_Tropas tropas) {
@@ -15,6 +15,4 @@ public class CPU {
     public void setTropas(Cola_Tropas tropas) {
         this.tropas = tropas;
     }
-    
-    
 }

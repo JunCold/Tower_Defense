@@ -1,6 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package proyecto_tower_defense;
 
-package tower_defense;
-
+/**
+ *
+ * @author JunCo
+ */
 public class Cola_Tropas {
     private Lista_Enlazada listaTropas;
 
@@ -18,6 +25,4 @@ public class Cola_Tropas {
     public boolean isVacia(){
         return listaTropas.isVacia();
     }
-            
-    
 }

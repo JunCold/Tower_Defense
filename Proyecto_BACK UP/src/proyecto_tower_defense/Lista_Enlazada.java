@@ -1,9 +1,8 @@
 
-package tower_defense;
+package proyecto_tower_defense;
 
 
 public class Lista_Enlazada {
-   
     private Nodo primerNodo;
     private Nodo ultimoNodo;
     
