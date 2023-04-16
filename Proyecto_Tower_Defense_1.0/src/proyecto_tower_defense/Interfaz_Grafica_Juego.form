@@ -227,14 +227,14 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\tower..png"/>
+              <Image iconType="2" name="C:\Users\melan\Downloads\tower..png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\tower..png"/>
+              <Image iconType="2" name="C:\Users\melan\Downloads\tower..png"/>
             </Property>
           </Properties>
         </Component>
@@ -271,14 +271,14 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\Archer...png"/>
+              <Image iconType="2" name="C:\Users\melan\Downloads\Archer...png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\Wizard...png"/>
+              <Image iconType="2" name="C:\Users\melan\Downloads\Wizard...png"/>
             </Property>
           </Properties>
         </Component>
@@ -310,7 +310,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\Knight2...png"/>
+              <Image iconType="2" name="C:\Users\melan\Downloads\Knight2...png"/>
             </Property>
           </Properties>
         </Component>

@@ -58,9 +58,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\tower..png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Downloads\\tower..png")); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\tower..png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Downloads\\tower..png")); // NOI18N
 
         LabelOleada.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         LabelOleada.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,9 +73,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLqtyTropas.setForeground(new java.awt.Color(255, 255, 255));
         LBLqtyTropas.setText("Seleccione la tropa que desea enviar:");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\Archer...png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Downloads\\Archer...png")); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\Wizard...png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Downloads\\Wizard...png")); // NOI18N
 
         LBLMagos1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLMagos1.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,7 +90,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\Knight2...png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Downloads\\Knight2...png")); // NOI18N
 
         LBLCaballeros.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLCaballeros.setForeground(new java.awt.Color(255, 255, 255));
