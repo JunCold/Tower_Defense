@@ -35,6 +35,10 @@ public class Castillo {
     
     
     public void recibirAtaque(double cantidad){
+<<<<<<< Updated upstream
         //puntosdeVida -= puntos
+=======
+        puntosdeVida -= puntos
+>>>>>>> Stashed changes
     }
 }
