@@ -52,26 +52,16 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLVidaRestarteJugador1 = new javax.swing.JLabel();
         TXTVidaJugador = new java.awt.TextField();
         TXTVidaMaquina = new java.awt.TextField();
-<<<<<<< Updated upstream
-        LBLAtaque = new javax.swing.JLabel();
-=======
         jLabel6 = new javax.swing.JLabel();
->>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-<<<<<<< Updated upstream
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Torre.png"))); // NOI18N
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Torre.png"))); // NOI18N
-=======
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tower..png"))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tower..png"))); // NOI18N
->>>>>>> Stashed changes
 
         LabelOleada.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         LabelOleada.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,15 +74,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLqtyTropas.setForeground(new java.awt.Color(255, 255, 255));
         LBLqtyTropas.setText("Seleccione la tropa que desea enviar:");
 
-<<<<<<< Updated upstream
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Arquero.png"))); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hechicero.png"))); // NOI18N
-=======
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Archer...png"))); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wizard...png"))); // NOI18N
->>>>>>> Stashed changes
 
         LBLMagos1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLMagos1.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,11 +91,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< Updated upstream
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Caballero.png"))); // NOI18N
-=======
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Knight2...png"))); // NOI18N
->>>>>>> Stashed changes
 
         LBLCaballeros.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLCaballeros.setForeground(new java.awt.Color(255, 255, 255));
@@ -213,14 +193,16 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                                                 .addComponent(BntAgregarCaballero, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(99, 99, 99))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(131, 131, 131)
-                                        .addComponent(LabelOleada)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LBLVidaRestarteJugador1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TXTVidaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(94, 94, 94)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(LabelOleada)
+                                                .addGap(18, 18, 18))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(LBLVidaRestarteJugador1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(TXTVidaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(94, 94, 94)))))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel2)
@@ -233,16 +215,10 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(9, 9, 9)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< Updated upstream
-                                        .addGap(34, 34, 34)
-                                        .addComponent(LBLAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-=======
                                         .addGap(29, 29, 29)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(257, 257, 257)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> Stashed changes
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(LblOleada1)
@@ -270,17 +246,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TXTOleada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelOleada))
-<<<<<<< Updated upstream
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(LBLAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-=======
->>>>>>> Stashed changes
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
@@ -411,6 +376,12 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -426,7 +397,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private java.awt.Button BntAgregarCaballero;
     private java.awt.Button BntAgregarMago;
     private javax.swing.JLabel LBLArqueros;
-    private javax.swing.JLabel LBLAtaque;
     private javax.swing.JLabel LBLCaballeros;
     private javax.swing.JLabel LBLMagos1;
     private javax.swing.JLabel LBLVidaRestarteJugador1;
