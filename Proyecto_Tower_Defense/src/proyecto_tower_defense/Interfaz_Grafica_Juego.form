@@ -112,6 +112,8 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                           <Component id="jLabel5" min="-2" pref="149" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="LBLAtaque" min="-2" pref="123" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -155,8 +157,16 @@
                               <Component id="TXTOleada" min="-2" max="-2" attributes="0"/>
                               <Component id="LabelOleada" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="190" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" pref="190" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="LBLAtaque" min="-2" pref="134" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="LBLVidaRestarteJugador1" min="-2" max="-2" attributes="0"/>
@@ -227,14 +237,14 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\tower..png"/>
+              <Image iconType="3" name="/Imagenes/Torre.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\tower..png"/>
+              <Image iconType="3" name="/Imagenes/Torre.png"/>
             </Property>
           </Properties>
         </Component>
@@ -271,14 +281,14 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\Archer...png"/>
+              <Image iconType="3" name="/Imagenes/Arquero.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\Wizard...png"/>
+              <Image iconType="3" name="/Imagenes/Hechicero.png"/>
             </Property>
           </Properties>
         </Component>
@@ -310,7 +320,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\melan\Documents\GitHub\Tower_Defense\Proyecto_Tower_Defense\Imagenes\Knight2...png"/>
+              <Image iconType="3" name="/Imagenes/Caballero.png"/>
             </Property>
           </Properties>
         </Component>
@@ -443,6 +453,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXTVidaMaquinaActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LBLAtaque">
         </Component>
       </SubComponents>
     </Container>

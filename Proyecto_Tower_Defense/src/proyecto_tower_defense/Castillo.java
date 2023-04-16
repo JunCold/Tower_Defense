@@ -35,6 +35,6 @@ public class Castillo {
     
     
     public void recibirAtaque(double cantidad){
-        puntosdeVida -= puntos
+        //puntosdeVida -= puntos
     }
 }

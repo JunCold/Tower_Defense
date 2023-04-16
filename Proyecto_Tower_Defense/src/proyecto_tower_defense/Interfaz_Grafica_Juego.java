@@ -52,15 +52,16 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLVidaRestarteJugador1 = new javax.swing.JLabel();
         TXTVidaJugador = new java.awt.TextField();
         TXTVidaMaquina = new java.awt.TextField();
+        LBLAtaque = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\tower..png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Torre.png"))); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\tower..png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Torre.png"))); // NOI18N
 
         LabelOleada.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         LabelOleada.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,9 +74,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLqtyTropas.setForeground(new java.awt.Color(255, 255, 255));
         LBLqtyTropas.setText("Seleccione la tropa que desea enviar:");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\Archer...png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Arquero.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\Wizard...png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hechicero.png"))); // NOI18N
 
         LBLMagos1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLMagos1.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,7 +91,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\melan\\Documents\\GitHub\\Tower_Defense\\Proyecto_Tower_Defense\\Imagenes\\Knight2...png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Caballero.png"))); // NOI18N
 
         LBLCaballeros.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLCaballeros.setForeground(new java.awt.Color(255, 255, 255));
@@ -211,7 +212,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                                                 .addComponent(TXTOleada, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(9, 9, 9)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(LBLAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -240,8 +243,13 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TXTOleada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelOleada))
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(LBLAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LBLVidaRestarteJugador1)
@@ -373,6 +381,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private java.awt.Button BntAgregarCaballero;
     private java.awt.Button BntAgregarMago;
     private javax.swing.JLabel LBLArqueros;
+    private javax.swing.JLabel LBLAtaque;
     private javax.swing.JLabel LBLCaballeros;
     private javax.swing.JLabel LBLMagos1;
     private javax.swing.JLabel LBLVidaRestarteJugador1;
