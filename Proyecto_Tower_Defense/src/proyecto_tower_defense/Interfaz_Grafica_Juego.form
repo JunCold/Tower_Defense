@@ -96,10 +96,7 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="LabelOleada" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="LabelOleada" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="LBLVidaRestarteJugador1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -284,6 +281,9 @@
               <Image iconType="3" name="/Imagenes/Hechicero.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ImagenHechiceroMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="LBLMagos1">
           <Properties>
@@ -307,6 +307,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BntAgregarArqueroMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BntAgregarArqueroActionPerformed"/>
           </Events>
         </Component>
@@ -350,6 +351,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BntAgregarMagoMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BntAgregarMagoActionPerformed"/>
           </Events>
         </Component>
@@ -364,6 +366,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BntAgregarCaballeroMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BntAgregarCaballeroActionPerformed"/>
           </Events>
         </Component>

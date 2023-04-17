@@ -16,7 +16,7 @@ public class Mago extends Tropa{
 
     @Override
     public void atacarCastillo(Castillo castillo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       castillo.recibirAtaque(this.getAtaque());
     }
     
 }

@@ -7,6 +7,7 @@ package proyecto_tower_defense;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.applet.AudioClip;
 
 /**
  *
@@ -77,6 +78,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         ImagenArquero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Arquero.png"))); // NOI18N
 
         ImagenHechicero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hechicero.png"))); // NOI18N
+        ImagenHechicero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenHechiceroMouseClicked(evt);
+            }
+        });
 
         LBLMagos1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LBLMagos1.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,6 +91,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarArquero.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         BntAgregarArquero.setLabel("¡Agregar tropa!");
         BntAgregarArquero.setPreferredSize(new java.awt.Dimension(26, 32));
+        BntAgregarArquero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BntAgregarArqueroMouseClicked(evt);
+            }
+        });
         BntAgregarArquero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BntAgregarArqueroActionPerformed(evt);
@@ -104,6 +115,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarMago.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         BntAgregarMago.setLabel("¡Agregar tropa!");
         BntAgregarMago.setPreferredSize(new java.awt.Dimension(26, 32));
+        BntAgregarMago.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BntAgregarMagoMouseClicked(evt);
+            }
+        });
         BntAgregarMago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BntAgregarMagoActionPerformed(evt);
@@ -113,6 +129,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarCaballero.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         BntAgregarCaballero.setLabel("¡Agregar tropa!");
         BntAgregarCaballero.setPreferredSize(new java.awt.Dimension(26, 32));
+        BntAgregarCaballero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BntAgregarCaballeroMouseClicked(evt);
+            }
+        });
         BntAgregarCaballero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BntAgregarCaballeroActionPerformed(evt);
@@ -201,9 +222,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(BntAgregarCaballero, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(88, 88, 88))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LabelOleada)
-                                        .addGap(18, 18, 18))
+                                    .addComponent(LabelOleada)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(LBLVidaRestarteJugador1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -342,6 +361,33 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private void TXTVidaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTVidaMaquinaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXTVidaMaquinaActionPerformed
+
+    private void BntAgregarCaballeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BntAgregarCaballeroMouseClicked
+        // TODO add your handling code here:
+        AudioClip sonidoCaballero;
+        sonidoCaballero= java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Caballero.wav"));
+        sonidoCaballero.play();
+        
+    }//GEN-LAST:event_BntAgregarCaballeroMouseClicked
+
+    private void ImagenHechiceroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenHechiceroMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ImagenHechiceroMouseClicked
+
+    private void BntAgregarMagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BntAgregarMagoMouseClicked
+        // TODO add your handling code here:
+        AudioClip sonidoMago;
+        sonidoMago= java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Mago.wav"));
+        sonidoMago.play();
+    }//GEN-LAST:event_BntAgregarMagoMouseClicked
+
+    private void BntAgregarArqueroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BntAgregarArqueroMouseClicked
+        // TODO add your handling code here:
+        AudioClip sonidoArquera;
+        sonidoArquera= java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Arquera.wav"));
+        sonidoArquera.play();
+    }//GEN-LAST:event_BntAgregarArqueroMouseClicked
 
     /**
      * @param args the command line arguments

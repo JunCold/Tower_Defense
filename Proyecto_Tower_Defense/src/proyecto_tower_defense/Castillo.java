@@ -34,7 +34,13 @@ public class Castillo {
     }
     
     
-    public void recibirAtaque(double cantidad){
+    public void recibirAtaque(double danio){
+        this.puntosdeVida-=danio;
+        if(this.puntosdeVida<0){
+            this.puntosdeVida=0;
+        }
+    }
+}
         /*
 <<<<<<< Updated upstream
         //puntosdeVida -= puntos
@@ -42,5 +48,3 @@ public class Castillo {
         puntosdeVida -= puntos
 >>>>>>> Stashed changes
 */
-    }
-}
