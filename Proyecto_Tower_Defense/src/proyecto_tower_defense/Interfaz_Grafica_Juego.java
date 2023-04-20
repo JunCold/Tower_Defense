@@ -8,6 +8,7 @@ package proyecto_tower_defense;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.applet.AudioClip;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,8 +19,38 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     /**
      * Creates new form Juego
      */
+    Cola_Tropas tropasJugador = new Cola_Tropas();
+    Cola_Tropas tropasCPU = new Cola_Tropas();
+    int numeroOleada = 1;
+    Castillo castilloJugador = new Castillo(10);
+    Castillo castilloCPU = new Castillo(10);
+    int tropasAgregadas=0;
+    int numOleada=1;
+    int tropasDisponibles=numOleada+4;
+    
     public Interfaz_Grafica_Juego() {
         initComponents();
+        lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida()+"");
+        lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida()+"");
+        lbl_tropasDisponibles.setText(tropasDisponibles+"");
+        lbl_tropasAgregadas.setText(tropasAgregadas+"");
+        lbl_Oleada.setText(numOleada+"");
+
+    }
+
+    public void crearTropasCpu() {
+        int c = 0;
+        Cola_Tropas tropasCPU = new Cola_Tropas();
+        Juego juego = new Juego();
+        while (c < (numeroOleada + 3)) {
+            tropasCPU.encolar(juego.generarTropasCpu());
+            c++;
+        }
+    }
+    public void comprobarTropas(){
+        if(tropasDisponibles>0){
+            JOptionPane.showMessageDialog(this, "Favor elija todas sus tropas antes de iniciar la oleada");
+        }
     }
 
     /**
@@ -35,7 +66,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         TorreJugador = new javax.swing.JLabel();
         TorreMaquina = new javax.swing.JLabel();
         LabelOleada = new javax.swing.JLabel();
-        TXTOleada = new java.awt.TextField();
         LBLqtyTropas = new javax.swing.JLabel();
         ImagenArquero = new javax.swing.JLabel();
         ImagenHechicero = new javax.swing.JLabel();
@@ -47,14 +77,17 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarMago = new java.awt.Button();
         BntAgregarCaballero = new java.awt.Button();
         LblOleada1 = new javax.swing.JLabel();
-        TXTTropasDisponibles = new java.awt.TextField();
         BTNVolverMenu = new javax.swing.JButton();
         LBLVidaRestarteMaquina = new javax.swing.JLabel();
         LBLVidaRestarteJugador1 = new javax.swing.JLabel();
-        TXTVidaJugador = new java.awt.TextField();
-        TXTVidaMaquina = new java.awt.TextField();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        lbl_vidaJugador = new javax.swing.JLabel();
+        lbl_vidaCpu = new javax.swing.JLabel();
+        LblOleada2 = new javax.swing.JLabel();
+        lbl_tropasDisponibles = new javax.swing.JLabel();
+        lbl_tropasAgregadas = new javax.swing.JLabel();
+        lbl_Oleada = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -68,9 +101,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LabelOleada.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         LabelOleada.setForeground(new java.awt.Color(255, 255, 255));
         LabelOleada.setText("Oleada:");
-
-        TXTOleada.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TXTOleada.setEditable(false);
 
         LBLqtyTropas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LBLqtyTropas.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,9 +175,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LblOleada1.setForeground(new java.awt.Color(255, 255, 255));
         LblOleada1.setText("Tropas disponibles:");
 
-        TXTTropasDisponibles.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TXTTropasDisponibles.setEditable(false);
-
         BTNVolverMenu.setBackground(new java.awt.Color(255, 0, 51));
         BTNVolverMenu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BTNVolverMenu.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,27 +194,35 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLVidaRestarteJugador1.setForeground(new java.awt.Color(255, 255, 255));
         LBLVidaRestarteJugador1.setText("Vida Restante: ");
 
-        TXTVidaJugador.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TXTVidaJugador.setEditable(false);
-        TXTVidaJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXTVidaJugadorActionPerformed(evt);
-            }
-        });
-
-        TXTVidaMaquina.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TXTVidaMaquina.setEditable(false);
-        TXTVidaMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXTVidaMaquinaActionPerformed(evt);
-            }
-        });
-
         jButton1.setBackground(new java.awt.Color(0, 153, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Iniciar Oleada");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        lbl_vidaJugador.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
+        lbl_vidaJugador.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbl_vidaCpu.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
+        lbl_vidaCpu.setForeground(new java.awt.Color(255, 255, 255));
+
+        LblOleada2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        LblOleada2.setForeground(new java.awt.Color(255, 255, 255));
+        LblOleada2.setText("Tropas añadidas:");
+
+        lbl_tropasDisponibles.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
+        lbl_tropasDisponibles.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbl_tropasAgregadas.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
+        lbl_tropasAgregadas.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbl_Oleada.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
+        lbl_Oleada.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -197,16 +232,20 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LBLqtyTropas)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(LBLqtyTropas)
+                        .addGap(267, 267, 267))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BTNVolverMenu)
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(279, 279, 279))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(TorreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(267, 267, 267))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -231,35 +270,39 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                             .addComponent(LabelOleada)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(LBLVidaRestarteJugador1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TXTVidaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(83, 83, 83)))
-                        .addGap(11, 11, 11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbl_vidaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TXTOleada, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ImagenArquero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BntAgregarArquero, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LBLArqueros))
-                        .addGap(262, 262, 262))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BTNVolverMenu)
-                        .addGap(46, 46, 46)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(279, 279, 279)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ImagenArquero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BntAgregarArquero, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LBLArqueros)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lbl_Oleada, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(262, 262, 262)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(LblOleada1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TXTTropasDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(TorreMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TorreMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(LBLVidaRestarteMaquina)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TXTVidaMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(31, 31, 31))))
+                                .addComponent(lbl_vidaCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(LblOleada2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbl_tropasAgregadas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(LblOleada1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_tropasDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,23 +310,23 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TXTOleada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelOleada))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelOleada)
+                            .addComponent(lbl_Oleada))
                         .addGap(1, 1, 1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(TorreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LBLVidaRestarteJugador1)
-                            .addComponent(TXTVidaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lbl_vidaJugador)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(TorreMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TXTVidaMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LBLVidaRestarteMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LBLVidaRestarteMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_vidaCpu))
                         .addGap(2, 2, 2)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -313,9 +356,13 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                             .addComponent(BntAgregarArquero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TXTTropasDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LblOleada1))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblOleada1)
+                            .addComponent(lbl_tropasDisponibles))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblOleada2)
+                            .addComponent(lbl_tropasAgregadas))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -343,6 +390,18 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/ArqueroAtaque.png"));
         jLabel6.setIcon(icono);
+        Arquero arquero=new Arquero(ABORT);
+        tropasJugador.encolar(arquero);
+        tropasAgregadas+=1;
+        tropasDisponibles-=1;
+        lbl_tropasAgregadas.setText(tropasAgregadas+"");
+        lbl_tropasDisponibles.setText(tropasDisponibles+"");
+        if(tropasDisponibles==0){
+            BntAgregarMago.setVisible(false);
+            BntAgregarCaballero.setVisible(false);
+            BntAgregarArquero.setVisible(false);
+        }
+        
     }//GEN-LAST:event_BntAgregarArqueroActionPerformed
 
     private void BntAgregarMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAgregarMagoActionPerformed
@@ -350,12 +409,37 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/HechiceroAtaque.png"));
         jLabel6.setIcon(icono);
+        Mago mago= new Mago(ABORT);
+        tropasJugador.encolar(mago);
+        tropasAgregadas+=1;
+        tropasDisponibles-=1;
+        lbl_tropasAgregadas.setText(tropasAgregadas+"");
+        lbl_tropasDisponibles.setText(tropasDisponibles+"");
+        if(tropasDisponibles==0){
+            BntAgregarMago.setVisible(false);
+            BntAgregarCaballero.setVisible(false);
+            BntAgregarArquero.setVisible(false);
+        }
+        
+
     }//GEN-LAST:event_BntAgregarMagoActionPerformed
 
     private void BntAgregarCaballeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAgregarCaballeroActionPerformed
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/CaballeroAtaque.png"));
         jLabel6.setIcon(icono);
+        Caballero caballero=new Caballero(ABORT);
+        tropasJugador.encolar(caballero);
+        tropasAgregadas+=1;
+        tropasDisponibles-=1;
+        lbl_tropasAgregadas.setText(tropasAgregadas+"");
+        lbl_tropasDisponibles.setText(tropasDisponibles+"");
+        if(tropasDisponibles==0){
+            BntAgregarMago.setVisible(false);
+            BntAgregarCaballero.setVisible(false);
+            BntAgregarArquero.setVisible(false);
+        }
+        
     }//GEN-LAST:event_BntAgregarCaballeroActionPerformed
 
     private void BTNVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNVolverMenuActionPerformed
@@ -364,40 +448,38 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BTNVolverMenuActionPerformed
 
-    private void TXTVidaJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTVidaJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TXTVidaJugadorActionPerformed
-
-    private void TXTVidaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTVidaMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TXTVidaMaquinaActionPerformed
-
     private void BntAgregarCaballeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BntAgregarCaballeroMouseClicked
         // TODO add your handling code here:
         AudioClip sonidoCaballero;
-        sonidoCaballero= java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Caballero.wav"));
+        sonidoCaballero = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Caballero.wav"));
         sonidoCaballero.play();
-        
+
     }//GEN-LAST:event_BntAgregarCaballeroMouseClicked
 
     private void ImagenHechiceroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenHechiceroMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_ImagenHechiceroMouseClicked
 
     private void BntAgregarMagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BntAgregarMagoMouseClicked
         // TODO add your handling code here:
         AudioClip sonidoMago;
-        sonidoMago= java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Mago.wav"));
+        sonidoMago = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Mago.wav"));
         sonidoMago.play();
     }//GEN-LAST:event_BntAgregarMagoMouseClicked
 
     private void BntAgregarArqueroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BntAgregarArqueroMouseClicked
         // TODO add your handling code here:
         AudioClip sonidoArquera;
-        sonidoArquera= java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Arquera.wav"));
+        sonidoArquera = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Arquera.wav"));
         sonidoArquera.play();
     }//GEN-LAST:event_BntAgregarArqueroMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        comprobarTropas();
+        crearTropasCpu();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,14 +539,16 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private javax.swing.JLabel LBLqtyTropas;
     private javax.swing.JLabel LabelOleada;
     private javax.swing.JLabel LblOleada1;
-    private java.awt.TextField TXTOleada;
-    private java.awt.TextField TXTTropasDisponibles;
-    private java.awt.TextField TXTVidaJugador;
-    private java.awt.TextField TXTVidaMaquina;
+    private javax.swing.JLabel LblOleada2;
     private javax.swing.JLabel TorreJugador;
     private javax.swing.JLabel TorreMaquina;
     private javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbl_Oleada;
+    private javax.swing.JLabel lbl_tropasAgregadas;
+    private javax.swing.JLabel lbl_tropasDisponibles;
+    private javax.swing.JLabel lbl_vidaCpu;
+    private javax.swing.JLabel lbl_vidaJugador;
     // End of variables declaration//GEN-END:variables
 }
