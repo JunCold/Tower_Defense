@@ -479,6 +479,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         // TODO add your handling code here:
         comprobarTropas();
         crearTropasCpu();
+        JOptionPane.showMessageDialog(this,tropasJugador.getListaTropas().getPrimerNodo()+" V.S "+tropasCPU.getListaTropas().getPrimerNodo());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

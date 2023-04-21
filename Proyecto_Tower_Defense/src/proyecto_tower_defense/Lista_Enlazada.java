@@ -10,6 +10,23 @@ public class Lista_Enlazada {
         this.primerNodo=null;
         this.ultimoNodo=null;
     }
+
+    public Nodo getPrimerNodo() {
+        return primerNodo;
+    }
+
+    public void setPrimerNodo(Nodo primerNodo) {
+        this.primerNodo = primerNodo;
+    }
+
+    public Nodo getUltimoNodo() {
+        return ultimoNodo;
+    }
+
+    public void setUltimoNodo(Nodo ultimoNodo) {
+        this.ultimoNodo = ultimoNodo;
+    }
+    
     
     public boolean isVacia(){
         return primerNodo==null;
@@ -59,6 +76,7 @@ public class Lista_Enlazada {
         public void setSiguiente(Nodo siguiente) {
             this.siguiente = siguiente;
         }
+        
         
     }
 }
