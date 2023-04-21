@@ -30,7 +30,8 @@ public class Menu_Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BTNNuevaPartida = new javax.swing.JButton();
-        BTNInstrucciones = new javax.swing.JButton();
+        BTNSalir = new javax.swing.JButton();
+        BTNInstrucciones1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,11 +48,19 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        BTNInstrucciones.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        BTNInstrucciones.setText("Instrucciones");
-        BTNInstrucciones.addActionListener(new java.awt.event.ActionListener() {
+        BTNSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BTNSalir.setText("Salir");
+        BTNSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNInstruccionesActionPerformed(evt);
+                BTNSalirActionPerformed(evt);
+            }
+        });
+
+        BTNInstrucciones1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BTNInstrucciones1.setText("Instrucciones");
+        BTNInstrucciones1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNInstrucciones1ActionPerformed(evt);
             }
         });
 
@@ -64,8 +73,9 @@ public class Menu_Principal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BTNInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BTNNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(BTNSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTNNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTNInstrucciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(jLabel1)))
@@ -78,9 +88,11 @@ public class Menu_Principal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
                 .addComponent(BTNNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(BTNInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(BTNInstrucciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BTNSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -97,17 +109,21 @@ public class Menu_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BTNInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNInstruccionesActionPerformed
-       Instrucciones abrir = new Instrucciones();
-       abrir.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_BTNInstruccionesActionPerformed
+    private void BTNSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_BTNSalirActionPerformed
 
     private void BTNNuevaPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNNuevaPartidaActionPerformed
         Interfaz_Grafica_Juego abrirjuego = new Interfaz_Grafica_Juego();
         abrirjuego.setVisible(true);
         dispose();
     }//GEN-LAST:event_BTNNuevaPartidaActionPerformed
+
+    private void BTNInstrucciones1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNInstrucciones1ActionPerformed
+        Instrucciones abrir = new Instrucciones();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BTNInstrucciones1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,8 +162,9 @@ public class Menu_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BTNInstrucciones;
+    private javax.swing.JButton BTNInstrucciones1;
     private javax.swing.JButton BTNNuevaPartida;
+    private javax.swing.JButton BTNSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
