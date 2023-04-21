@@ -25,4 +25,17 @@ public class Cola_Tropas {
     public boolean isVacia(){
         return listaTropas.isVacia();
     }
+
+    public Lista_Enlazada getListaTropas() {
+        return listaTropas;
+    }
+
+    public void setListaTropas(Lista_Enlazada listaTropas) {
+        this.listaTropas = listaTropas;
+    }
+    
+    
+
+   
+    
 }
