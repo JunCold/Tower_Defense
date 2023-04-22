@@ -8,6 +8,8 @@ package proyecto_tower_defense;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.applet.AudioClip;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
@@ -47,11 +49,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             c++;
         }
     }
-    public void comprobarTropas(){
-        if(tropasDisponibles>0){
-            JOptionPane.showMessageDialog(this, "Favor elija todas sus tropas antes de iniciar la oleada");
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,7 +78,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLVidaRestarteMaquina = new javax.swing.JLabel();
         LBLVidaRestarteJugador1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BNTIniciarOleada = new javax.swing.JButton();
         lbl_vidaJugador = new javax.swing.JLabel();
         lbl_vidaCpu = new javax.swing.JLabel();
         LblOleada2 = new javax.swing.JLabel();
@@ -194,14 +191,15 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLVidaRestarteJugador1.setForeground(new java.awt.Color(255, 255, 255));
         LBLVidaRestarteJugador1.setText("Vida Restante: ");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 102));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Iniciar Oleada");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BNTIniciarOleada.setBackground(new java.awt.Color(0, 153, 102));
+        BNTIniciarOleada.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BNTIniciarOleada.setForeground(new java.awt.Color(255, 255, 255));
+        BNTIniciarOleada.setText("Iniciar Oleada");
+        BNTIniciarOleada.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BNTIniciarOleada.setEnabled(false);
+        BNTIniciarOleada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BNTIniciarOleadaActionPerformed(evt);
             }
         });
 
@@ -237,7 +235,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BTNVolverMenu)
                         .addGap(46, 46, 46)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BNTIniciarOleada, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(279, 279, 279))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -365,7 +363,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                             .addComponent(lbl_tropasAgregadas))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BNTIniciarOleada, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BTNVolverMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34))
         );
@@ -397,11 +395,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
         lbl_tropasDisponibles.setText(tropasDisponibles+"");
         if(tropasDisponibles==0){
-            BntAgregarMago.setVisible(false);
-            BntAgregarCaballero.setVisible(false);
-            BntAgregarArquero.setVisible(false);
+            BntAgregarMago.setEnabled(false);
+            BntAgregarCaballero.setEnabled(false);
+            BntAgregarArquero.setEnabled(false);
+            BNTIniciarOleada.setEnabled(true);
         }
-        
     }//GEN-LAST:event_BntAgregarArqueroActionPerformed
 
     private void BntAgregarMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAgregarMagoActionPerformed
@@ -416,12 +414,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
         lbl_tropasDisponibles.setText(tropasDisponibles+"");
         if(tropasDisponibles==0){
-            BntAgregarMago.setVisible(false);
-            BntAgregarCaballero.setVisible(false);
-            BntAgregarArquero.setVisible(false);
+            BntAgregarMago.setEnabled(false);
+            BntAgregarCaballero.setEnabled(false);
+            BntAgregarArquero.setEnabled(false);
+            BNTIniciarOleada.setEnabled(true);
         }
-        
-
     }//GEN-LAST:event_BntAgregarMagoActionPerformed
 
     private void BntAgregarCaballeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAgregarCaballeroActionPerformed
@@ -435,11 +432,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
         lbl_tropasDisponibles.setText(tropasDisponibles+"");
         if(tropasDisponibles==0){
-            BntAgregarMago.setVisible(false);
-            BntAgregarCaballero.setVisible(false);
-            BntAgregarArquero.setVisible(false);
+            BntAgregarMago.setEnabled(false);
+            BntAgregarCaballero.setEnabled(false);
+            BntAgregarArquero.setEnabled(false);
+            BNTIniciarOleada.setEnabled(true);
         }
-        
     }//GEN-LAST:event_BntAgregarCaballeroActionPerformed
 
     private void BTNVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNVolverMenuActionPerformed
@@ -475,12 +472,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         sonidoArquera.play();
     }//GEN-LAST:event_BntAgregarArqueroMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BNTIniciarOleadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BNTIniciarOleadaActionPerformed
         // TODO add your handling code here:
-        comprobarTropas();
         crearTropasCpu();
-        JOptionPane.showMessageDialog(this,tropasJugador.getListaTropas().getPrimerNodo()+" V.S "+tropasCPU.getListaTropas().getPrimerNodo());
-    }//GEN-LAST:event_jButton1ActionPerformed
+        JOptionPane.showMessageDialog(null,tropasJugador.getListaTropas().getPrimerNodo()+" V.S "+tropasCPU.getListaTropas().getPrimerNodo());
+    }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -525,6 +521,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BNTIniciarOleada;
     private javax.swing.JButton BTNVolverMenu;
     private java.awt.Button BntAgregarArquero;
     private java.awt.Button BntAgregarCaballero;
@@ -543,7 +540,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private javax.swing.JLabel LblOleada2;
     private javax.swing.JLabel TorreJugador;
     private javax.swing.JLabel TorreMaquina;
-    private javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_Oleada;
