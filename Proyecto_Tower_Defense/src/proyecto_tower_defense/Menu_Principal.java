@@ -154,11 +154,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu_Principal().setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

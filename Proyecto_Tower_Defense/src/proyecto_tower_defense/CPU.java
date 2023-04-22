@@ -2,17 +2,17 @@ package proyecto_tower_defense;
 
 public class CPU {
 
-    private Cola_Tropas tropas;
+    private Cola tropas;
 
-    public CPU(Cola_Tropas tropas) {
+    public CPU(Cola tropas) {
         this.tropas = tropas;
     }
 
-    public Cola_Tropas getTropas() {
+    public Cola getTropas() {
         return tropas;
     }
 
-    public void setTropas(Cola_Tropas tropas) {
+    public void setTropas(Cola tropas) {
         this.tropas = tropas;
     }
 }

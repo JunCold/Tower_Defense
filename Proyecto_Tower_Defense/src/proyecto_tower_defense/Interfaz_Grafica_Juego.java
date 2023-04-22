@@ -8,8 +8,6 @@ package proyecto_tower_defense;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.applet.AudioClip;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +19,8 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     /**
      * Creates new form Juego
      */
-    Cola_Tropas tropasJugador = new Cola_Tropas();
-    Cola_Tropas tropasCPU = new Cola_Tropas();
+    Cola tropasJugador = new Cola();
+    Cola tropasCPU = new Cola();
     int numeroOleada = 1;
     Castillo castilloJugador = new Castillo(10);
     Castillo castilloCPU = new Castillo(10);
@@ -37,15 +35,14 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         lbl_tropasDisponibles.setText(tropasDisponibles+"");
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
         lbl_Oleada.setText(numOleada+"");
-
     }
 
     public void crearTropasCpu() {
         int c = 0;
-        Cola_Tropas tropasCPU = new Cola_Tropas();
+        //Cola tropasCPU = new Cola();
         Juego juego = new Juego();
         while (c < (numeroOleada + 3)) {
-            tropasCPU.encolar(juego.generarTropasCpu());
+            tropasCPU.encola(juego.generarTropasCpu());
             c++;
         }
     }
@@ -388,8 +385,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/ArqueroAtaque.png"));
         jLabel6.setIcon(icono);
-        Arquero arquero=new Arquero(ABORT);
-        tropasJugador.encolar(arquero);
+        //Tropa arquero = new Arquero(1); 
+        Nodo arquero = new Nodo(new Arquero(1));
+        tropasJugador.encola(arquero);
         tropasAgregadas+=1;
         tropasDisponibles-=1;
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
@@ -404,11 +402,12 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
 
     private void BntAgregarMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAgregarMagoActionPerformed
         //Icon imagen = new ImageIcon(new ImageIcon(getClass().getResource));
+        //Cola cola = new Cola();
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/HechiceroAtaque.png"));
         jLabel6.setIcon(icono);
-        Mago mago= new Mago(ABORT);
-        tropasJugador.encolar(mago);
+        Nodo mago = new Nodo(new Mago(1.5));
+        tropasJugador.encola(mago);
         tropasAgregadas+=1;
         tropasDisponibles-=1;
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
@@ -425,8 +424,8 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/CaballeroAtaque.png"));
         jLabel6.setIcon(icono);
-        Caballero caballero=new Caballero(ABORT);
-        tropasJugador.encolar(caballero);
+        Nodo caballero = new Nodo(new Caballero(2));
+        tropasJugador.encola(caballero);
         tropasAgregadas+=1;
         tropasDisponibles-=1;
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
@@ -475,50 +474,12 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private void BNTIniciarOleadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BNTIniciarOleadaActionPerformed
         // TODO add your handling code here:
         crearTropasCpu();
-        JOptionPane.showMessageDialog(null,tropasJugador.getListaTropas().getPrimerNodo()+" V.S "+tropasCPU.getListaTropas().getPrimerNodo());
+        JOptionPane.showMessageDialog(null,tropasJugador.getPrimerNodo() +" V.S "+tropasCPU.getPrimerNodo());
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Grafica_Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Grafica_Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Grafica_Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Grafica_Juego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Interfaz_Grafica_Juego().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BNTIniciarOleada;

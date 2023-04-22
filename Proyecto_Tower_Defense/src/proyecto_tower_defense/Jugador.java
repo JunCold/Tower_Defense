@@ -3,17 +3,17 @@ package proyecto_tower_defense;
 
 
 public class Jugador {
-    private Cola_Tropas tropas;
+    private Cola tropas;
 
-    public Jugador(Cola_Tropas tropas) {
+    public Jugador(Cola tropas) {
         this.tropas = tropas;
     }
 
-    public Cola_Tropas getTropas() {
+    public Cola getTropas() {
         return tropas;
     }
 
-    public void setTropas(Cola_Tropas tropas) {
+    public void setTropas(Cola tropas) {
         this.tropas = tropas;
     }
     

@@ -22,6 +22,7 @@ public abstract class Tropa {
     public void setAtaque(double ataque) {
         this.ataque = ataque;
     }
+
     public abstract void atacarCastillo(Castillo castillo);
     
 }
