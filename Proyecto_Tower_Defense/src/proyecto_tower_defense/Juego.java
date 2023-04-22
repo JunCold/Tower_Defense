@@ -3,7 +3,7 @@ package proyecto_tower_defense;
 public class Juego {
 
     public Nodo generarTropasCpu() {
-        int random = (int) (Math.random() * 2);
+        int random = (int) (Math.random() * 3);
         if (random == 0) {
             Nodo caballero = new Nodo(new Caballero(2));
             return caballero;

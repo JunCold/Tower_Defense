@@ -474,7 +474,16 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     private void BNTIniciarOleadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BNTIniciarOleadaActionPerformed
         // TODO add your handling code here:
         crearTropasCpu();
-        JOptionPane.showMessageDialog(null,tropasJugador.getPrimerNodo() +" V.S "+tropasCPU.getPrimerNodo());
+       // JOptionPane.showMessageDialog(null,tropasJugador.getPrimerNodo() +" V.S "+tropasCPU.getPrimerNodo());
+       if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Arquero){
+           JOptionPane.showMessageDialog(this, "Arquero V.S Arquero \n EMPATE");
+           
+       }else if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Mago){
+           JOptionPane.showMessageDialog(this, "Arquero V.S Mago \n Ganas");
+       }else if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Caballero){
+           JOptionPane.showMessageDialog(this, "Arquero V.S Caballero \n Pierde");
+       }
+       
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
     /**
