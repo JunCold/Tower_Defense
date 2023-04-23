@@ -24,21 +24,21 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     public int numeroOleada = 1;
     Castillo castilloJugador = new Castillo(10);
     Castillo castilloCPU = new Castillo(10);
-    int tropasAgregadas=0;
-    int numOleada=1;
-    int tropasDisponibles=numOleada+4;
+    int tropasAgregadas = 0;
+    int numOleada = 1;
+    int tropasDisponibles = numOleada + 4;
     double DanioaTorre;
     int contador = 1;
-    
+
     public Interfaz_Grafica_Juego() {
         initComponents();
-        lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida()+"");
-        lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida()+"");
-        lbl_tropasDisponibles.setText(tropasDisponibles+"");
-        lbl_tropasAgregadas.setText(tropasAgregadas+"");
-        lbl_Oleada.setText(numOleada+"");
+        lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
+        lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
+        lbl_tropasDisponibles.setText(tropasDisponibles + "");
+        lbl_tropasAgregadas.setText(tropasAgregadas + "");
+        lbl_Oleada.setText(numOleada + "");
     }
-    
+
     public void crearTropasCpu() {
         int c = 0;
         //Cola tropasCPU = new Cola();
@@ -436,11 +436,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         //Tropa arquero = new Arquero(1); 
         Nodo arquero = new Nodo(new Arquero(1));
         tropasJugador.encola(arquero);
-        tropasAgregadas+=1;
-        tropasDisponibles-=1;
-        lbl_tropasAgregadas.setText(tropasAgregadas+"");
-        lbl_tropasDisponibles.setText(tropasDisponibles+"");
-        if(tropasDisponibles==0){
+        tropasAgregadas += 1;
+        tropasDisponibles -= 1;
+        lbl_tropasAgregadas.setText(tropasAgregadas + "");
+        lbl_tropasDisponibles.setText(tropasDisponibles + "");
+        if (tropasDisponibles == 0) {
             BntAgregarMago.setEnabled(false);
             BntAgregarCaballero.setEnabled(false);
             BntAgregarArquero.setEnabled(false);
@@ -454,11 +454,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         jLabel6.setIcon(icono);
         Nodo mago = new Nodo(new Mago(1.5));
         tropasJugador.encola(mago);
-        tropasAgregadas+=1;
-        tropasDisponibles-=1;
-        lbl_tropasAgregadas.setText(tropasAgregadas+"");
-        lbl_tropasDisponibles.setText(tropasDisponibles+"");
-        if(tropasDisponibles==0){
+        tropasAgregadas += 1;
+        tropasDisponibles -= 1;
+        lbl_tropasAgregadas.setText(tropasAgregadas + "");
+        lbl_tropasDisponibles.setText(tropasDisponibles + "");
+        if (tropasDisponibles == 0) {
             BntAgregarMago.setEnabled(false);
             BntAgregarCaballero.setEnabled(false);
             BntAgregarArquero.setEnabled(false);
@@ -472,11 +472,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         jLabel6.setIcon(icono);
         Nodo caballero = new Nodo(new Caballero(2));
         tropasJugador.encola(caballero);
-        tropasAgregadas+=1;
-        tropasDisponibles-=1;
-        lbl_tropasAgregadas.setText(tropasAgregadas+"");
-        lbl_tropasDisponibles.setText(tropasDisponibles+"");
-        if(tropasDisponibles==0){
+        tropasAgregadas += 1;
+        tropasDisponibles -= 1;
+        lbl_tropasAgregadas.setText(tropasAgregadas + "");
+        lbl_tropasDisponibles.setText(tropasDisponibles + "");
+        if (tropasDisponibles == 0) {
             BntAgregarMago.setEnabled(false);
             BntAgregarCaballero.setEnabled(false);
             BntAgregarArquero.setEnabled(false);
@@ -523,7 +523,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         crearTropasCpu();
         int salir = 0;
         boolean gana = false;
-        boolean empate = false; 
+        boolean empate = false;
         Nodo auxju = tropasJugador.getPrimerNodo();
         Nodo auxcpu = tropasCPU.getPrimerNodo();
         Nodo auxcpui = auxcpu;
@@ -531,147 +531,168 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         LBLTropa1.setText("Tropa 1");
         LBLTropa2.setText("Tropa 2");
         LBLTropa3.setText("Tropa 3");
-        if (LBLT1CPU.getIcon() == null){
-            if (auxcpui.getTropa() instanceof Arquero){
-            icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
-            LBLT1CPU.setIcon(icono);
-            }else if (auxcpui.getTropa() instanceof Caballero){
+        if (LBLT1CPU.getIcon() == null) {
+            if (auxcpui.getTropa() instanceof Arquero) {
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
+                LBLT1CPU.setIcon(icono);
+            } else if (auxcpui.getTropa() instanceof Caballero) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
                 LBLT1CPU.setIcon(icono);
-            }else if (auxcpui.getTropa() instanceof Mago){
+            } else if (auxcpui.getTropa() instanceof Mago) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
                 LBLT1CPU.setIcon(icono);
             }
             auxcpui = auxcpui.getAtras();
         }
-        if (LBLT2CPU.getIcon() == null){
-            if (auxcpui.getTropa() instanceof Arquero){
+        if (LBLT2CPU.getIcon() == null) {
+            if (auxcpui.getTropa() instanceof Arquero) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
                 LBLT2CPU.setIcon(icono);
-            }else if (auxcpui.getTropa() instanceof Caballero){
+            } else if (auxcpui.getTropa() instanceof Caballero) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
                 LBLT2CPU.setIcon(icono);
-            }else if (auxcpui.getTropa() instanceof Mago){
+            } else if (auxcpui.getTropa() instanceof Mago) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
                 LBLT2CPU.setIcon(icono);
             }
             auxcpui = auxcpui.getAtras();
         }
-        if (LBLT3CPU.getIcon() == null){
-            if (auxcpui.getTropa() instanceof Arquero){
+        if (LBLT3CPU.getIcon() == null) {
+            if (auxcpui.getTropa() instanceof Arquero) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
                 LBLT3CPU.setIcon(icono);
-            }else if (auxcpui.getTropa() instanceof Caballero){
+            } else if (auxcpui.getTropa() instanceof Caballero) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
                 LBLT3CPU.setIcon(icono);
-            }else if (auxcpui.getTropa() instanceof Mago){
+            } else if (auxcpui.getTropa() instanceof Mago) {
                 icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
                 LBLT3CPU.setIcon(icono);
             }
         }
-        while (salir != 1){
-            if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago){
+        while (salir != 1) {
+            if (auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago) {
                 JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
+                AudioClip sonidoAtack;
+                sonidoAtack = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Atack.wav"));
+                sonidoAtack.play();
                 //
                 auxcpu = auxcpu.getAtras();
-                if (auxcpu == null){
+                if (auxcpu == null) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero){
+            } else if (auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero) {
                 JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
+                AudioClip sonidoDamage;
+                sonidoDamage = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Damage.wav"));
+                sonidoDamage.play();
                 //
                 auxju = auxju.getAtras();
-                if (auxju == null){
+                if (auxju == null) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero){
+            } else if (auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero) {
                 JOptionPane.showMessageDialog(null, "Arquero V.S Arquero \n EMPATE");
                 //
                 auxju = auxju.getAtras();
                 auxcpu = auxcpu.getAtras();
-                if ((auxcpu == null) || (auxju == null)){
+                if ((auxcpu == null) || (auxju == null)) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero){
+            } else if (auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero) {
                 JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
+                AudioClip sonidoAtack;
+                sonidoAtack = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Atack.wav"));
+                sonidoAtack.play();
                 //
                 auxcpu = auxcpu.getAtras();
-                if (auxcpu == null){
+                if (auxcpu == null) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago){
+            } else if (auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago) {
                 JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
+                AudioClip sonidoDamage;
+                sonidoDamage = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Damage.wav"));
+                sonidoDamage.play();
                 //
                 auxju = auxju.getAtras();
-                if (auxju == null){
+                if (auxju == null) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero){
+            } else if (auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero) {
                 JOptionPane.showMessageDialog(null, "Caballero V.S Caballero \n EMPATE");
                 //
                 auxju = auxju.getAtras();
                 auxcpu = auxcpu.getAtras();
-                if ((null == auxcpu) || (auxju == null)){
+                if ((null == auxcpu) || (auxju == null)) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero){
+            } else if (auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero) {
                 JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
+                AudioClip sonidoAtack;
+                sonidoAtack = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Atack.wav"));
+                sonidoAtack.play();
                 //
                 auxcpu = auxcpu.getAtras();
-                if (auxcpu == null){
+                if (auxcpu == null) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero){
+            } else if (auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero) {
                 JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
+                AudioClip sonidoDamage;
+                sonidoDamage = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Damage.wav"));
+                sonidoDamage.play();
                 //
                 auxju = auxju.getAtras();
-                if (auxju == null){
+                if (auxju == null) {
                     salir = 1;
                 }
-            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago){
+            } else if (auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago) {
                 JOptionPane.showMessageDialog(null, "Mago V.S Mago \n EMPATE");
                 //
                 auxju = auxju.getAtras();
                 auxcpu = auxcpu.getAtras();
-                if ((auxcpu == null) || (auxju == null)){
+                if ((auxcpu == null) || (auxju == null)) {
                     salir = 1;
                 }
             }
-            if ((auxju == null) && (auxcpu == null)){
+            if ((auxju == null) && (auxcpu == null)) {
                 empate = true;
-            }else if ((auxju != null) && (auxcpu == null)){
+            } else if ((auxju != null) && (auxcpu == null)) {
                 gana = true;
-            }else if ((auxju == null) && (auxcpu != null)){
+            } else if ((auxju == null) && (auxcpu != null)) {
                 gana = false;
             }
         }
-        if (gana == true){
-       while (auxju != null){
-           if (auxju.getTropa() instanceof Mago){
-               DanioaTorre = DanioaTorre + 1.5;
-           }else if (auxju.getTropa() instanceof Caballero){
-               DanioaTorre = DanioaTorre + 2;
-           }else if (auxju.getTropa() instanceof Arquero){
-               DanioaTorre = DanioaTorre + 1;
-           }
-           auxju = auxju.getAtras();
-       }
-       JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
-       castilloCPU.recibirAtaque(DanioaTorre);
-        }else if (gana == false){
-            while (auxcpu != null){
-                if (auxcpu.getTropa() instanceof Mago){
+        if (gana == true) {
+            while (auxju != null) {
+                if (auxju.getTropa() instanceof Mago) {
                     DanioaTorre = DanioaTorre + 1.5;
-                }else if (auxcpu.getTropa() instanceof Caballero){
+                } else if (auxju.getTropa() instanceof Caballero) {
                     DanioaTorre = DanioaTorre + 2;
-                }else if (auxcpu.getTropa() instanceof Arquero){
+                } else if (auxju.getTropa() instanceof Arquero) {
+                    DanioaTorre = DanioaTorre + 1;
+                }
+                auxju = auxju.getAtras();
+            }
+            JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
+            AudioClip sonidoCelebrate;
+            sonidoCelebrate = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Ahuevo.wav"));
+            sonidoCelebrate.play();
+            castilloCPU.recibirAtaque(DanioaTorre);
+        } else if (gana == false) {
+            while (auxcpu != null) {
+                if (auxcpu.getTropa() instanceof Mago) {
+                    DanioaTorre = DanioaTorre + 1.5;
+                } else if (auxcpu.getTropa() instanceof Caballero) {
+                    DanioaTorre = DanioaTorre + 2;
+                } else if (auxcpu.getTropa() instanceof Arquero) {
                     DanioaTorre = DanioaTorre + 1;
                 }
                 auxcpu = auxcpu.getAtras();
             }
             JOptionPane.showMessageDialog(null, "¡Derrota! El enemigo ejerció " + DanioaTorre + " a la su torre");
             castilloJugador.recibirAtaque(DanioaTorre);
-        }else if (empate == true){
+        } else if (empate == true) {
             JOptionPane.showMessageDialog(null, "¡Empate! Logró defenderse de los ataques enemigos exitosamente");
         }
         numOleada++;
@@ -696,13 +717,19 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarArquero.setEnabled(true);
         BntAgregarMago.setEnabled(true);
         BNTIniciarOleada.setEnabled(false);
-        if ((castilloJugador.getPuntosdeVida() == 0) || (castilloCPU.getPuntosdeVida() == 0)){
-            if(castilloJugador.getPuntosdeVida()==0){
+        if ((castilloJugador.getPuntosdeVida() == 0) || (castilloCPU.getPuntosdeVida() == 0)) {
+            if (castilloJugador.getPuntosdeVida() == 0) {
                 JOptionPane.showMessageDialog(this, "GAME OVER");
-            }else if(castilloCPU.getPuntosdeVida() == 0){
+                AudioClip sonidoLoser;
+                sonidoLoser = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Sonido Game Over Mario.wav"));
+                sonidoLoser.play();
+            } else if (castilloCPU.getPuntosdeVida() == 0) {
                 JOptionPane.showMessageDialog(this, "YOU WIN");
+                AudioClip sonidoWin;
+                sonidoWin = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Sonido Win Mario.wav"));
+                sonidoWin.play();
             }
-        
+
             contador = 1;
             jLabel6.setIcon(null);
             numOleada = 1;
@@ -724,7 +751,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             LBLTropa3.setText(null);
             BNTIniciarOleada.setEnabled(false);
         }
-       /**/
+        /**/
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
     /**
