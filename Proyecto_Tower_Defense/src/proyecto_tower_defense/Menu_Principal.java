@@ -42,6 +42,9 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         BTNNuevaPartida.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BTNNuevaPartida.setText("Crear una nueva partida");
+        BTNNuevaPartida.setBorder(null);
+        BTNNuevaPartida.setBorderPainted(false);
+        BTNNuevaPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BTNNuevaPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTNNuevaPartidaActionPerformed(evt);
@@ -50,6 +53,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         BTNSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BTNSalir.setText("Salir");
+        BTNSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BTNSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTNSalirActionPerformed(evt);
@@ -58,6 +62,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         BTNInstrucciones1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BTNInstrucciones1.setText("Instrucciones");
+        BTNInstrucciones1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BTNInstrucciones1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTNInstrucciones1ActionPerformed(evt);

@@ -695,8 +695,14 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarCaballero.setEnabled(true);
         BntAgregarArquero.setEnabled(true);
         BntAgregarMago.setEnabled(true);
-        BNTIniciarOleada.setEnabled(true);
+        BNTIniciarOleada.setEnabled(false);
         if ((castilloJugador.getPuntosdeVida() == 0) || (castilloCPU.getPuntosdeVida() == 0)){
+            if(castilloJugador.getPuntosdeVida()==0){
+                JOptionPane.showMessageDialog(this, "GAME OVER");
+            }else if(castilloCPU.getPuntosdeVida() == 0){
+                JOptionPane.showMessageDialog(this, "YOU WIN");
+            }
+        
             contador = 1;
             jLabel6.setIcon(null);
             numOleada = 1;
@@ -717,11 +723,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             LBLT3CPU.setIcon(null);
             LBLTropa3.setText(null);
             BNTIniciarOleada.setEnabled(false);
-            if (castilloJugador.getPuntosdeVida() == 0){
-                JOptionPane.showMessageDialog(null,"GAME OVER");
-            }else if (castilloCPU.getPuntosdeVida() == 0){
-                JOptionPane.showMessageDialog(null,"YOU WIN");
-            }
         }
        /**/
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
