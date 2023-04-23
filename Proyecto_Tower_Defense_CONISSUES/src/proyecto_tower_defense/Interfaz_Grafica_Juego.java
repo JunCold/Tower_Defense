@@ -548,6 +548,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
            auxcpui = auxcpui.getAtras();
        }
        if (LBLT2CPU.getIcon() == null){
+           auxcpui = auxcpui.getAtras();
            if (auxcpui.getTropa() instanceof Arquero){
                icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
                LBLT2CPU.setIcon(icono);
@@ -561,6 +562,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
            auxcpui = auxcpui.getAtras();
        }
        if (LBLT3CPU.getIcon() == null){
+           auxcpui.getAtras();
            if (auxcpui.getTropa() instanceof Arquero){
                icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
                LBLT3CPU.setIcon(icono);
