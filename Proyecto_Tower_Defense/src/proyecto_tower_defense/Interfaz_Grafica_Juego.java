@@ -27,6 +27,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     int tropasAgregadas=0;
     int numOleada=1;
     int tropasDisponibles=numOleada+4;
+    double DanioaTorre; 
     
     public Interfaz_Grafica_Juego() {
         initComponents();
@@ -477,12 +478,12 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         crearTropasCpu();
        int salir = 0;
        boolean gana = false;
+       boolean empate = false; 
        Nodo auxju = tropasJugador.getPrimerNodo();
        Nodo auxcpu = tropasCPU.getPrimerNodo();
        while (salir != 1){
            if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago){
                JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
-               gana = true; 
                //
                auxcpu = auxcpu.getAtras();
                if (auxcpu == null){
@@ -490,7 +491,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero){
                JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
-               gana = false;
                //
                auxju = auxju.getAtras();
                if (auxju == null){
@@ -498,7 +498,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero){
                JOptionPane.showMessageDialog(null, "Arquero V.S Arquero \n EMPATE");
-               gana = false;
                //
                auxju = auxju.getAtras();
                auxcpu = auxcpu.getAtras();
@@ -507,7 +506,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero){
                JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
-               gana = true; 
                //
                auxcpu = auxcpu.getAtras();
                if (auxcpu == null){
@@ -515,7 +513,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago){
                JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
-               gana = false;
                //
                auxju = auxju.getAtras();
                if (auxju == null){
@@ -523,7 +520,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero){
                JOptionPane.showMessageDialog(null, "Caballero V.S Caballero \n EMPATE");
-               gana = false;
                //
                auxju = auxju.getAtras();
                auxcpu = auxcpu.getAtras();
@@ -532,7 +528,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero){
                JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
-               gana = true; 
                //
                auxcpu = auxcpu.getAtras();
                if (auxcpu == null){
@@ -540,7 +535,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero){
                JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
-               gana = false;
                //
                auxju = auxju.getAtras();
                if (auxju == null){
@@ -548,7 +542,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                }
            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago){
                JOptionPane.showMessageDialog(null, "Mago V.S Mago \n EMPATE");
-               gana = false;
                //
                auxju = auxju.getAtras();
                auxcpu = auxcpu.getAtras();
@@ -556,8 +549,41 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                    salir = 1;
                }
            }
+           if ((auxju == null) && (auxcpu == null)){
+               empate = true;
+           }else if ((auxju != null) && (auxcpu == null)){
+               gana = true;
+           }else if ((auxju == null) && (auxcpu != null)){
+               gana = false;
+           }
        }
-       
+       if (gana == true){
+           while (auxju != null){
+               if (auxju.getTropa() instanceof Mago){
+                   DanioaTorre = DanioaTorre + 1.5;
+               }else if (auxju.getTropa() instanceof Caballero){
+                   DanioaTorre = DanioaTorre + 2;
+               }else if (auxju.getTropa() instanceof Arquero){
+                   DanioaTorre = DanioaTorre + 1;
+               }
+               auxju = auxju.getAtras();
+           }
+           JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
+       }else if (gana == false){
+           while (auxcpu != null){
+               if (auxcpu.getTropa() instanceof Mago){
+                   DanioaTorre = DanioaTorre + 1.5;
+               }else if (auxcpu.getTropa() instanceof Caballero){
+                   DanioaTorre = DanioaTorre + 2;
+               }else if (auxcpu.getTropa() instanceof Arquero){
+                   DanioaTorre = DanioaTorre + 1;
+               }
+               auxcpu = auxcpu.getAtras();
+           }
+           JOptionPane.showMessageDialog(null, "¡Derrota! El enemigo ejerció " + DanioaTorre + " a la su torre");
+       }else if (empate == true){
+           JOptionPane.showMessageDialog(null, "¡Empate! Logró defenderse de los ataques enemigos exitosamente");
+       }
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
     /**
