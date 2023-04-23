@@ -27,8 +27,8 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     int tropasAgregadas=0;
     int numOleada=1;
     int tropasDisponibles=numOleada+4;
-    double DanioaTorre; 
-    
+    double DanioaTorre;
+    int contador = 1;
     
     public Interfaz_Grafica_Juego() {
         initComponents();
@@ -38,15 +38,16 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         lbl_tropasAgregadas.setText(tropasAgregadas+"");
         lbl_Oleada.setText(numOleada+"");
     }
-
+    
     public void crearTropasCpu() {
         int c = 0;
         //Cola tropasCPU = new Cola();
         Juego juego = new Juego();
-        while (c < (numeroOleada + 3)) {
+        while (c < (contador + 3)) {
             tropasCPU.encola(juego.generarTropasCpu());
             c++;
         }
+        contador = contador + 1;
     }
 
     /**
@@ -695,49 +696,33 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BntAgregarArquero.setEnabled(true);
         BntAgregarMago.setEnabled(true);
         BNTIniciarOleada.setEnabled(true);
-       if (castilloJugador.getPuntosdeVida() == 0){
-           JOptionPane.showMessageDialog(null,"GAME OVER");
-           jLabel6.setIcon(null);
-           numOleada = 1;
-           castilloJugador.setPuntosdeVida(10);
-           castilloCPU.setPuntosdeVida(10);
-           tropasDisponibles = numOleada + 4;
-           tropasAgregadas = 0;
-           lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
-           lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
-           lbl_tropasAgregadas.setText(tropasAgregadas + "");
-           lbl_tropasDisponibles.setText(tropasDisponibles + "");
-           lbl_Oleada.setText(numOleada + "");
-           tropasJugador.vaciarCola();
-           tropasCPU.vaciarCola();
-           LBLTropa1.setText(null);
-           LBLT2CPU.setIcon(null);
-           LBLTropa2.setText(null);
-           LBLT3CPU.setIcon(null);
-           LBLTropa3.setText(null);
-           BNTIniciarOleada.setEnabled(false);
-       }else if (castilloCPU.getPuntosdeVida() == 0){
-           JOptionPane.showMessageDialog(null,"YOU WIN");
-           jLabel6.setIcon(null);
-           numOleada = 1;
-           castilloJugador.setPuntosdeVida(10);
-           castilloCPU.setPuntosdeVida(10);
-           tropasDisponibles = numOleada + 4;
-           tropasAgregadas = 0;
-           lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
-           lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
-           lbl_tropasAgregadas.setText(tropasAgregadas + "");
-           lbl_tropasDisponibles.setText(tropasDisponibles + "");
-           lbl_Oleada.setText(numOleada + "");
-           tropasJugador.vaciarCola();
-           tropasCPU.vaciarCola();
-           LBLTropa1.setText(null);
-           LBLT2CPU.setIcon(null);
-           LBLTropa2.setText(null);
-           LBLT3CPU.setIcon(null);
-           LBLTropa3.setText(null);
-           BNTIniciarOleada.setEnabled(false);
-       }
+        if ((castilloJugador.getPuntosdeVida() == 0) || (castilloCPU.getPuntosdeVida() == 0)){
+            contador = 1;
+            jLabel6.setIcon(null);
+            numOleada = 1;
+            castilloJugador.setPuntosdeVida(10);
+            castilloCPU.setPuntosdeVida(10);
+            tropasDisponibles = numOleada + 4;
+            tropasAgregadas = 0;
+            lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
+            lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
+            lbl_tropasAgregadas.setText(tropasAgregadas + "");
+            lbl_tropasDisponibles.setText(tropasDisponibles + "");
+            lbl_Oleada.setText(numOleada + "");
+            tropasJugador.vaciarCola();
+            tropasCPU.vaciarCola();
+            LBLTropa1.setText(null);
+            LBLT2CPU.setIcon(null);
+            LBLTropa2.setText(null);
+            LBLT3CPU.setIcon(null);
+            LBLTropa3.setText(null);
+            BNTIniciarOleada.setEnabled(false);
+            if (castilloJugador.getPuntosdeVida() == 0){
+                JOptionPane.showMessageDialog(null,"GAME OVER");
+            }else if (castilloCPU.getPuntosdeVida() == 0){
+                JOptionPane.showMessageDialog(null,"YOU WIN");
+            }
+        }
        /**/
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
