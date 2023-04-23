@@ -29,6 +29,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     int tropasDisponibles=numOleada+4;
     double DanioaTorre; 
     
+    
     public Interfaz_Grafica_Juego() {
         initComponents();
         lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida()+"");
@@ -349,7 +350,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                             .addComponent(TorreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LBLVidaRestarteJugador1)
                             .addComponent(lbl_vidaJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -421,10 +422,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -450,8 +448,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_BntAgregarArqueroActionPerformed
 
     private void BntAgregarMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAgregarMagoActionPerformed
-        //Icon imagen = new ImageIcon(new ImageIcon(getClass().getResource));
-        //Cola cola = new Cola();
         Icon icono;
         icono = new ImageIcon(getClass().getResource("/Imagenes/HechiceroAtaque.png"));
         jLabel6.setIcon(icono);
@@ -524,158 +520,225 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.getRootFrame().setAlwaysOnTop(true);
         crearTropasCpu();
-       int salir = 0;
-       boolean gana = false;
-       boolean empate = false; 
-       Nodo auxju = tropasJugador.getPrimerNodo();
-       Nodo auxcpu = tropasCPU.getPrimerNodo();
-       Nodo auxcpui = auxcpu;
-       Icon icono;
-       LBLTropa1.setText("Tropa 1");
-       LBLTropa2.setText("Tropa 2");
-       LBLTropa3.setText("Tropa 3");
-       if (LBLT1CPU.getIcon() == null){
-           if (auxcpui.getTropa() instanceof Arquero){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
-               LBLT1CPU.setIcon(icono);
-           }else if (auxcpui.getTropa() instanceof Caballero){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
-               LBLT1CPU.setIcon(icono);
-           }else if (auxcpui.getTropa() instanceof Mago){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
-               LBLT1CPU.setIcon(icono);
+        int salir = 0;
+        boolean gana = false;
+        boolean empate = false; 
+        Nodo auxju = tropasJugador.getPrimerNodo();
+        Nodo auxcpu = tropasCPU.getPrimerNodo();
+        Nodo auxcpui = auxcpu;
+        Icon icono;
+        LBLTropa1.setText("Tropa 1");
+        LBLTropa2.setText("Tropa 2");
+        LBLTropa3.setText("Tropa 3");
+        if (LBLT1CPU.getIcon() == null){
+            if (auxcpui.getTropa() instanceof Arquero){
+            icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
+            LBLT1CPU.setIcon(icono);
+            }else if (auxcpui.getTropa() instanceof Caballero){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
+                LBLT1CPU.setIcon(icono);
+            }else if (auxcpui.getTropa() instanceof Mago){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
+                LBLT1CPU.setIcon(icono);
+            }
+            auxcpui = auxcpui.getAtras();
+        }
+        if (LBLT2CPU.getIcon() == null){
+            if (auxcpui.getTropa() instanceof Arquero){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
+                LBLT2CPU.setIcon(icono);
+            }else if (auxcpui.getTropa() instanceof Caballero){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
+                LBLT2CPU.setIcon(icono);
+            }else if (auxcpui.getTropa() instanceof Mago){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
+                LBLT2CPU.setIcon(icono);
+            }
+            auxcpui = auxcpui.getAtras();
+        }
+        if (LBLT3CPU.getIcon() == null){
+            if (auxcpui.getTropa() instanceof Arquero){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
+                LBLT3CPU.setIcon(icono);
+            }else if (auxcpui.getTropa() instanceof Caballero){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
+                LBLT3CPU.setIcon(icono);
+            }else if (auxcpui.getTropa() instanceof Mago){
+                icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
+                LBLT3CPU.setIcon(icono);
+            }
+        }
+        while (salir != 1){
+            if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago){
+                JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
+                //
+                auxcpu = auxcpu.getAtras();
+                if (auxcpu == null){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero){
+                JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
+                //
+                auxju = auxju.getAtras();
+                if (auxju == null){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero){
+                JOptionPane.showMessageDialog(null, "Arquero V.S Arquero \n EMPATE");
+                //
+                auxju = auxju.getAtras();
+                auxcpu = auxcpu.getAtras();
+                if ((auxcpu == null) || (auxju == null)){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero){
+                JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
+                //
+                auxcpu = auxcpu.getAtras();
+                if (auxcpu == null){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago){
+                JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
+                //
+                auxju = auxju.getAtras();
+                if (auxju == null){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero){
+                JOptionPane.showMessageDialog(null, "Caballero V.S Caballero \n EMPATE");
+                //
+                auxju = auxju.getAtras();
+                auxcpu = auxcpu.getAtras();
+                if ((null == auxcpu) || (auxju == null)){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero){
+                JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
+                //
+                auxcpu = auxcpu.getAtras();
+                if (auxcpu == null){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero){
+                JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
+                //
+                auxju = auxju.getAtras();
+                if (auxju == null){
+                    salir = 1;
+                }
+            }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago){
+                JOptionPane.showMessageDialog(null, "Mago V.S Mago \n EMPATE");
+                //
+                auxju = auxju.getAtras();
+                auxcpu = auxcpu.getAtras();
+                if ((auxcpu == null) || (auxju == null)){
+                    salir = 1;
+                }
+            }
+            if ((auxju == null) && (auxcpu == null)){
+                empate = true;
+            }else if ((auxju != null) && (auxcpu == null)){
+                gana = true;
+            }else if ((auxju == null) && (auxcpu != null)){
+                gana = false;
+            }
+        }
+        if (gana == true){
+       while (auxju != null){
+           if (auxju.getTropa() instanceof Mago){
+               DanioaTorre = DanioaTorre + 1.5;
+           }else if (auxju.getTropa() instanceof Caballero){
+               DanioaTorre = DanioaTorre + 2;
+           }else if (auxju.getTropa() instanceof Arquero){
+               DanioaTorre = DanioaTorre + 1;
            }
-           auxcpui = auxcpui.getAtras();
+           auxju = auxju.getAtras();
        }
-       if (LBLT2CPU.getIcon() == null){
-           if (auxcpui.getTropa() instanceof Arquero){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
-               LBLT2CPU.setIcon(icono);
-           }else if (auxcpui.getTropa() instanceof Caballero){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
-               LBLT2CPU.setIcon(icono);
-           }else if (auxcpui.getTropa() instanceof Mago){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
-               LBLT2CPU.setIcon(icono);
-           }
-           auxcpui = auxcpui.getAtras();
+       JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
+       castilloCPU.recibirAtaque(DanioaTorre);
+        }else if (gana == false){
+            while (auxcpu != null){
+                if (auxcpu.getTropa() instanceof Mago){
+                    DanioaTorre = DanioaTorre + 1.5;
+                }else if (auxcpu.getTropa() instanceof Caballero){
+                    DanioaTorre = DanioaTorre + 2;
+                }else if (auxcpu.getTropa() instanceof Arquero){
+                    DanioaTorre = DanioaTorre + 1;
+                }
+                auxcpu = auxcpu.getAtras();
+            }
+            JOptionPane.showMessageDialog(null, "¡Derrota! El enemigo ejerció " + DanioaTorre + " a la su torre");
+            castilloJugador.recibirAtaque(DanioaTorre);
+        }else if (empate == true){
+            JOptionPane.showMessageDialog(null, "¡Empate! Logró defenderse de los ataques enemigos exitosamente");
+        }
+        numOleada++;
+        jLabel6.setIcon(null);
+        tropasDisponibles = numOleada + 4;
+        tropasAgregadas = 0;
+        lbl_Oleada.setText(numOleada + "");
+        lbl_tropasAgregadas.setText(tropasAgregadas + "");
+        lbl_tropasDisponibles.setText(tropasDisponibles + "");
+        lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
+        lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
+        LBLT1CPU.setIcon(null);
+        LBLTropa1.setText(null);
+        LBLT2CPU.setIcon(null);
+        LBLTropa2.setText(null);
+        LBLT3CPU.setIcon(null);
+        LBLTropa3.setText(null);
+        DanioaTorre = 0;
+        tropasJugador.vaciarCola();
+        tropasCPU.vaciarCola();
+        BntAgregarCaballero.setEnabled(true);
+        BntAgregarArquero.setEnabled(true);
+        BntAgregarMago.setEnabled(true);
+        BNTIniciarOleada.setEnabled(true);
+       if (castilloJugador.getPuntosdeVida() == 0){
+           JOptionPane.showMessageDialog(null,"GAME OVER");
+           jLabel6.setIcon(null);
+           numOleada = 1;
+           castilloJugador.setPuntosdeVida(10);
+           castilloCPU.setPuntosdeVida(10);
+           tropasDisponibles = numOleada + 4;
+           tropasAgregadas = 0;
+           lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
+           lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
+           lbl_tropasAgregadas.setText(tropasAgregadas + "");
+           lbl_tropasDisponibles.setText(tropasDisponibles + "");
+           lbl_Oleada.setText(numOleada + "");
+           tropasJugador.vaciarCola();
+           tropasCPU.vaciarCola();
+           LBLTropa1.setText(null);
+           LBLT2CPU.setIcon(null);
+           LBLTropa2.setText(null);
+           LBLT3CPU.setIcon(null);
+           LBLTropa3.setText(null);
+           BNTIniciarOleada.setEnabled(false);
+       }else if (castilloCPU.getPuntosdeVida() == 0){
+           JOptionPane.showMessageDialog(null,"YOU WIN");
+           jLabel6.setIcon(null);
+           numOleada = 1;
+           castilloJugador.setPuntosdeVida(10);
+           castilloCPU.setPuntosdeVida(10);
+           tropasDisponibles = numOleada + 4;
+           tropasAgregadas = 0;
+           lbl_vidaJugador.setText(castilloJugador.getPuntosdeVida() + "");
+           lbl_vidaCpu.setText(castilloCPU.getPuntosdeVida() + "");
+           lbl_tropasAgregadas.setText(tropasAgregadas + "");
+           lbl_tropasDisponibles.setText(tropasDisponibles + "");
+           lbl_Oleada.setText(numOleada + "");
+           tropasJugador.vaciarCola();
+           tropasCPU.vaciarCola();
+           LBLTropa1.setText(null);
+           LBLT2CPU.setIcon(null);
+           LBLTropa2.setText(null);
+           LBLT3CPU.setIcon(null);
+           LBLTropa3.setText(null);
+           BNTIniciarOleada.setEnabled(false);
        }
-       if (LBLT3CPU.getIcon() == null){
-           if (auxcpui.getTropa() instanceof Arquero){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Flecha.png"));
-               LBLT3CPU.setIcon(icono);
-           }else if (auxcpui.getTropa() instanceof Caballero){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Espadas.png"));
-               LBLT3CPU.setIcon(icono);
-           }else if (auxcpui.getTropa() instanceof Mago){
-               icono = new ImageIcon(getClass().getResource("/Imagenes/Magia.png"));
-               LBLT3CPU.setIcon(icono);
-           }
-       }
-       
-       while (salir != 1){
-           if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago){
-               JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
-               //
-               auxcpu = auxcpu.getAtras();
-               if (auxcpu == null){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero){
-               JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
-               //
-               auxju = auxju.getAtras();
-               if (auxju == null){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero){
-               JOptionPane.showMessageDialog(null, "Arquero V.S Arquero \n EMPATE");
-               //
-               auxju = auxju.getAtras();
-               auxcpu = auxcpu.getAtras();
-               if ((auxcpu == null) || (auxju == null)){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero){
-               JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
-               //
-               auxcpu = auxcpu.getAtras();
-               if (auxcpu == null){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago){
-               JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
-               //
-               auxju = auxju.getAtras();
-               if (auxju == null){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero){
-               JOptionPane.showMessageDialog(null, "Caballero V.S Caballero \n EMPATE");
-               //
-               auxju = auxju.getAtras();
-               auxcpu = auxcpu.getAtras();
-               if ((null == auxcpu) || (auxju == null)){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero){
-               JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
-               //
-               auxcpu = auxcpu.getAtras();
-               if (auxcpu == null){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero){
-               JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
-               //
-               auxju = auxju.getAtras();
-               if (auxju == null){
-                   salir = 1;
-               }
-           }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago){
-               JOptionPane.showMessageDialog(null, "Mago V.S Mago \n EMPATE");
-               //
-               auxju = auxju.getAtras();
-               auxcpu = auxcpu.getAtras();
-               if ((auxcpu == null) || (auxju == null)){
-                   salir = 1;
-               }
-           }
-           if ((auxju == null) && (auxcpu == null)){
-               empate = true;
-           }else if ((auxju != null) && (auxcpu == null)){
-               gana = true;
-           }else if ((auxju == null) && (auxcpu != null)){
-               gana = false;
-           }
-       }
-       if (gana == true){
-           while (auxju != null){
-               if (auxju.getTropa() instanceof Mago){
-                   DanioaTorre = DanioaTorre + 1.5;
-               }else if (auxju.getTropa() instanceof Caballero){
-                   DanioaTorre = DanioaTorre + 2;
-               }else if (auxju.getTropa() instanceof Arquero){
-                   DanioaTorre = DanioaTorre + 1;
-               }
-               auxju = auxju.getAtras();
-           }
-           JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
-       }else if (gana == false){
-           while (auxcpu != null){
-               if (auxcpu.getTropa() instanceof Mago){
-                   DanioaTorre = DanioaTorre + 1.5;
-               }else if (auxcpu.getTropa() instanceof Caballero){
-                   DanioaTorre = DanioaTorre + 2;
-               }else if (auxcpu.getTropa() instanceof Arquero){
-                   DanioaTorre = DanioaTorre + 1;
-               }
-               auxcpu = auxcpu.getAtras();
-           }
-           JOptionPane.showMessageDialog(null, "¡Derrota! El enemigo ejerció " + DanioaTorre + " a la su torre");
-       }else if (empate == true){
-           JOptionPane.showMessageDialog(null, "¡Empate! Logró defenderse de los ataques enemigos exitosamente");
-       }
+       /**/
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 
     /**

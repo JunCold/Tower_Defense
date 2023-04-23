@@ -53,6 +53,11 @@ public class Cola {
         }
         return null;
     }
+    public void vaciarCola(){
+        while(!isVacia()){
+            eliminar();
+        }
+    }
     
     public void Lista_Enlazada(){
         this.frente = null;
