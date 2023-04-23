@@ -473,16 +473,73 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
 
     private void BNTIniciarOleadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BNTIniciarOleadaActionPerformed
         // TODO add your handling code here:
+        JOptionPane.getRootFrame().setAlwaysOnTop(true);
         crearTropasCpu();
-       // JOptionPane.showMessageDialog(null,tropasJugador.getPrimerNodo() +" V.S "+tropasCPU.getPrimerNodo());
-       if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Arquero){
+       int contador;
+       boolean gana = false;
+       Nodo auxju = tropasJugador.getPrimerNodo();
+       Nodo auxcpu = tropasCPU.getPrimerNodo();
+       contador = tropasAgregadas;
+       while (contador > 0){
+           if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago){
+               JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
+               gana = true; 
+               //
+               auxcpu = auxcpu.getAtras();
+           }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero){
+               JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
+               gana = false;
+               //
+               auxju = auxju.getAtras();
+           }else if(auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero){
+               JOptionPane.showMessageDialog(null, "Arquero V.S Arquero \n EMPATE");
+               gana = false;
+               //
+               auxju = auxju.getAtras();
+               auxcpu = auxcpu.getAtras();
+           }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero){
+               JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
+               gana = true; 
+               //
+               auxcpu = auxcpu.getAtras();
+           }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago){
+               JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
+               gana = false;
+               //
+               auxju = auxju.getAtras();
+           }else if(auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero){
+               JOptionPane.showMessageDialog(null, "Caballero V.S Caballero \n EMPATE");
+               gana = false;
+               //
+               auxju = auxju.getAtras();
+               auxcpu = auxcpu.getAtras();
+           }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero){
+               JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
+               gana = true; 
+               //
+               auxcpu = auxcpu.getAtras();
+           }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero){
+               JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
+               gana = false;
+               //
+               auxju = auxju.getAtras();
+           }else if(auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago){
+               JOptionPane.showMessageDialog(null, "Mago V.S Mago \n EMPATE");
+               gana = false;
+               //
+               auxju = auxju.getAtras();
+               auxcpu = auxcpu.getAtras();
+           }
+           contador = contador - 1;
+       }
+       /*if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Arquero){
            JOptionPane.showMessageDialog(this, "Arquero V.S Arquero \n EMPATE");
            
        }else if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Mago){
            JOptionPane.showMessageDialog(this, "Arquero V.S Mago \n Ganas");
        }else if(tropasJugador.getPrimerNodo().getTropa() instanceof Arquero && tropasCPU.getPrimerNodo().getTropa() instanceof Caballero){
            JOptionPane.showMessageDialog(this, "Arquero V.S Caballero \n Pierde");
-       }
+       }*/
        
     }//GEN-LAST:event_BNTIniciarOleadaActionPerformed
 

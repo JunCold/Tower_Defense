@@ -45,16 +45,6 @@ public class Cola {
         return frente == null;
     }
     
-    public void agregar(Tropa tropa){
-        Nodo nuevoNodo = new Nodo(tropa);
-        if(isVacia()){
-            frente = nuevoNodo;
-            ultimo = nuevoNodo;
-        }else{
-            ultimo.setAtras(nuevoNodo);
-            ultimo = nuevoNodo;
-        }
-    }
     public Tropa eliminar(){
         if(!isVacia()){
             Tropa tropa = frente.getTropa();
