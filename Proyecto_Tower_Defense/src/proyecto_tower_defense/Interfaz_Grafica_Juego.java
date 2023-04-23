@@ -730,7 +730,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         if ((castilloJugador.getPuntosdeVida() == 0) || (castilloCPU.getPuntosdeVida() == 0)) {
             if (castilloJugador.getPuntosdeVida() == 0) {
                 AudioClip sonidoLoser;
-                sonidoLoser = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Sonido Game Over Mario.wav"));
+                sonidoLoser = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Game Over Mario.wav"));
                 sonidoLoser.play();
                 JOptionPane.showMessageDialog(this, "GAME OVER");
 
