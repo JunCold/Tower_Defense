@@ -571,20 +571,22 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         }
         while (salir != 1) {
             if (auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Mago) {
-                JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
                 AudioClip sonidoAtack;
                 sonidoAtack = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Atack.wav"));
                 sonidoAtack.play();
+                JOptionPane.showMessageDialog(null, "Arquero V.S Mago \n GANAS");
+
                 //
                 auxcpu = auxcpu.getAtras();
                 if (auxcpu == null) {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Caballero) {
-                JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
                 AudioClip sonidoDamage;
                 sonidoDamage = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Damage.wav"));
                 sonidoDamage.play();
+                JOptionPane.showMessageDialog(null, "Arquero V.S Caballero \n PIERDES");
+
                 //
                 auxju = auxju.getAtras();
                 if (auxju == null) {
@@ -599,20 +601,22 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Arquero) {
-                JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
                 AudioClip sonidoAtack;
                 sonidoAtack = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Atack.wav"));
                 sonidoAtack.play();
+                JOptionPane.showMessageDialog(null, "Caballero V.S Arquero \n GANAS");
+
                 //
                 auxcpu = auxcpu.getAtras();
                 if (auxcpu == null) {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Mago) {
-                JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
                 AudioClip sonidoDamage;
                 sonidoDamage = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Damage.wav"));
                 sonidoDamage.play();
+                JOptionPane.showMessageDialog(null, "Caballero V.S Mago \n PIERDES");
+
                 //
                 auxju = auxju.getAtras();
                 if (auxju == null) {
@@ -627,20 +631,22 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Caballero) {
-                JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
                 AudioClip sonidoAtack;
                 sonidoAtack = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Atack.wav"));
                 sonidoAtack.play();
+                JOptionPane.showMessageDialog(null, "Mago V.S Caballero \n GANAS");
+
                 //
                 auxcpu = auxcpu.getAtras();
                 if (auxcpu == null) {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Arquero) {
-                JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
                 AudioClip sonidoDamage;
                 sonidoDamage = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Damage.wav"));
                 sonidoDamage.play();
+                JOptionPane.showMessageDialog(null, "Mago V.S Arquero \n PIERDES");
+
                 //
                 auxju = auxju.getAtras();
                 if (auxju == null) {
@@ -674,10 +680,11 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 }
                 auxju = auxju.getAtras();
             }
-            JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
             AudioClip sonidoCelebrate;
             sonidoCelebrate = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Ahuevo.wav"));
             sonidoCelebrate.play();
+            JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
+
             castilloCPU.recibirAtaque(DanioaTorre);
         } else if (gana == false) {
             while (auxcpu != null) {
@@ -690,6 +697,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 }
                 auxcpu = auxcpu.getAtras();
             }
+            AudioClip SonidoDerrota;
+            SonidoDerrota = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Derrota.wav"));
+            SonidoDerrota.play();
             JOptionPane.showMessageDialog(null, "¡Derrota! El enemigo ejerció " + DanioaTorre + " a la su torre");
             castilloJugador.recibirAtaque(DanioaTorre);
         } else if (empate == true) {
@@ -719,15 +729,17 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         BNTIniciarOleada.setEnabled(false);
         if ((castilloJugador.getPuntosdeVida() == 0) || (castilloCPU.getPuntosdeVida() == 0)) {
             if (castilloJugador.getPuntosdeVida() == 0) {
-                JOptionPane.showMessageDialog(this, "GAME OVER");
                 AudioClip sonidoLoser;
                 sonidoLoser = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Sonido Game Over Mario.wav"));
                 sonidoLoser.play();
+                JOptionPane.showMessageDialog(this, "GAME OVER");
+
             } else if (castilloCPU.getPuntosdeVida() == 0) {
-                JOptionPane.showMessageDialog(this, "YOU WIN");
                 AudioClip sonidoWin;
                 sonidoWin = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Sonido Win Mario.wav"));
                 sonidoWin.play();
+                JOptionPane.showMessageDialog(this, "YOU WIN");
+
             }
 
             contador = 1;
