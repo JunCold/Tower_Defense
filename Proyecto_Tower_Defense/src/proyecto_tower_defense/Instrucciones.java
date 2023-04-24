@@ -44,7 +44,7 @@ public class Instrucciones extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("- El juego consistira en que usted deberá defenderse de los ataques enemigos, y \nademás debe de destruir la torre enemiga. \n\n- Va a poder seleccionar la tropa que desea enviar entre magos, caballeros y \narqueros. Donde:\n\n* Los magos derrotan a los caballeros, pero son debiles ante los ataques de \nlos arqueros. Y ejercen 1.5 puntos de daño a la torre enemiga. \n* Los caballeros derrotan a los arqueros, pero son debiles ante los ataques de \nlos magos. Y ejercen 2 puntos de daño a la torre enemiga.\n* Los arqueros derrotan a los magos, pero son debiles ante los ataques de \nlos caballeros. Y ejercen 1 punto de daño a la torre enemiga.\n\n- Las torres contienen\n\n- Cada oleada finalizara cuando el jugador se quede sin tropas restantes, y el \njuego finalizara cuando uno de las torres sea destruido.");
+        jTextArea1.setText("- El juego consistira en que usted deberá defenderse de los ataques enemigos, y \nademás debe de destruir la torre enemiga. \n\n- Va a poder seleccionar la tropa que desea enviar entre magos, caballeros y \narqueros. Donde:\n\n* Los magos derrotan a los caballeros, pero son debiles ante los ataques de \nlos arqueros. Y ejercen 1.5 puntos de daño a la torre enemiga. \n* Los caballeros derrotan a los arqueros, pero son debiles ante los ataques de \nlos magos. Y ejercen 2 puntos de daño a la torre enemiga.\n* Los arqueros derrotan a los magos, pero son debiles ante los ataques de \nlos caballeros. Y ejercen 1 punto de daño a la torre enemiga.\n\n- Las torres contienen 10 puntos de vida y se iran restando conforme reciba los ataques\ndel oponente.\n\n- Cada oleada finalizara cuando el jugador se quede sin tropas restantes, y el \njuego finalizara cuando uno de las torres sea destruido.");
         jScrollPane1.setViewportView(jTextArea1);
 
         BTNVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -77,8 +77,8 @@ public class Instrucciones extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BTNVolver)
                 .addContainerGap(38, Short.MAX_VALUE))
         );

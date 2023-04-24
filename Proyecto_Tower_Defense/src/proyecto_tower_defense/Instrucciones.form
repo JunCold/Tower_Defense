@@ -67,8 +67,8 @@
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="306" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="321" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="BTNVolver" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="38" max="32767" attributes="0"/>
               </Group>
@@ -99,7 +99,7 @@
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="- El juego consistira en que usted deber&#xe1; defenderse de los ataques enemigos, y &#xa;adem&#xe1;s debe de destruir la torre enemiga. &#xa;&#xa;- Va a poder seleccionar la tropa que desea enviar entre magos, caballeros y &#xa;arqueros. Donde:&#xa;&#xa;* Los magos derrotan a los caballeros, pero son debiles ante los ataques de &#xa;los arqueros. Y ejercen 1.5 puntos de da&#xf1;o a la torre enemiga. &#xa;* Los caballeros derrotan a los arqueros, pero son debiles ante los ataques de &#xa;los magos. Y ejercen 2 puntos de da&#xf1;o a la torre enemiga.&#xa;* Los arqueros derrotan a los magos, pero son debiles ante los ataques de &#xa;los caballeros. Y ejercen 1 punto de da&#xf1;o a la torre enemiga.&#xa;&#xa;- Las torres contienen&#xa;&#xa;- Cada oleada finalizara cuando el jugador se quede sin tropas restantes, y el &#xa;juego finalizara cuando uno de las torres sea destruido."/>
+                <Property name="text" type="java.lang.String" value="- El juego consistira en que usted deber&#xe1; defenderse de los ataques enemigos, y &#xa;adem&#xe1;s debe de destruir la torre enemiga. &#xa;&#xa;- Va a poder seleccionar la tropa que desea enviar entre magos, caballeros y &#xa;arqueros. Donde:&#xa;&#xa;* Los magos derrotan a los caballeros, pero son debiles ante los ataques de &#xa;los arqueros. Y ejercen 1.5 puntos de da&#xf1;o a la torre enemiga. &#xa;* Los caballeros derrotan a los arqueros, pero son debiles ante los ataques de &#xa;los magos. Y ejercen 2 puntos de da&#xf1;o a la torre enemiga.&#xa;* Los arqueros derrotan a los magos, pero son debiles ante los ataques de &#xa;los caballeros. Y ejercen 1 punto de da&#xf1;o a la torre enemiga.&#xa;&#xa;- Las torres contienen 10 puntos de vida y se iran restando conforme reciba los ataques&#xa;del oponente.&#xa;&#xa;- Cada oleada finalizara cuando el jugador se quede sin tropas restantes, y el &#xa;juego finalizara cuando uno de las torres sea destruido."/>
               </Properties>
             </Component>
           </SubComponents>
