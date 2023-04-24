@@ -669,7 +669,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 gana = false;
             }
         }
-        if (gana == true) {
+        if ((gana == true) && (empate == false)) {
             while (auxju != null) {
                 if (auxju.getTropa() instanceof Mago) {
                     DanioaTorre = DanioaTorre + 1.5;
@@ -686,7 +686,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "¡Felicidades, usted gano esta oleada y ejerció " + DanioaTorre + " a la torre enemiga!");
 
             castilloCPU.recibirAtaque(DanioaTorre);
-        } else if (gana == false) {
+        } else if ((gana == false) && (empate == false)) {
             while (auxcpu != null) {
                 if (auxcpu.getTropa() instanceof Mago) {
                     DanioaTorre = DanioaTorre + 1.5;
@@ -741,7 +741,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "YOU WIN");
 
             }
-
             contador = 1;
             jLabel6.setIcon(null);
             numOleada = 1;
