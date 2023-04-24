@@ -32,13 +32,12 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
     int tropasDisponibles = numOleada + 4;
     double DanioaTorre;
     int contador = 1;
-    
+
     private Timer ntimer;
     private int miliSegundos;
     private int segundos;
     private int minutos;
     private int horas;
-    
 
     public Interfaz_Grafica_Juego() {
         initComponents();
@@ -47,33 +46,35 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
         lbl_tropasDisponibles.setText(tropasDisponibles + "");
         lbl_tropasAgregadas.setText(tropasAgregadas + "");
         lbl_Oleada.setText(numOleada + "");
-        ntimer = new Timer (10,(ActionEvent e) -> {
-                inicioCronometro();
-            
+        ntimer = new Timer(10, (ActionEvent e) -> {
+            inicioCronometro();
+
         });
     }
-    
-    private void inicioCronometro(){
+
+    private void inicioCronometro() {
         actualizarCronometro();
         actualizarLabel();
     }
-    private void actualizarCronometro(){
-        miliSegundos ++;
-        
-        if(miliSegundos == 60){
+
+    private void actualizarCronometro() {
+        miliSegundos++;
+
+        if (miliSegundos == 60) {
             miliSegundos = 0;
-            segundos ++;
+            segundos++;
         }
-        if(segundos == 60){
+        if (segundos == 60) {
             segundos = 0;
-            minutos ++;
+            minutos++;
         }
-        if(minutos == 60){
+        if (minutos == 60) {
             minutos = 0;
-            horas ++;
+            horas++;
         }
     }
-    private void actualizarLabel(){
+
+    private void actualizarLabel() {
         String cronometro = horas + ":" + minutos + ":" + segundos + ":" + miliSegundos;
         LabelTiempo.setText(cronometro);
     }
@@ -655,6 +656,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Arquero && auxcpu.getTropa() instanceof Arquero) {
+                AudioClip sonidoEmpate;
+                sonidoEmpate = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Empate.wav"));
+                sonidoEmpate.play();
                 JOptionPane.showMessageDialog(null, "Arquero V.S Arquero \n EMPATE");
                 //
                 auxju = auxju.getAtras();
@@ -685,6 +689,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Caballero && auxcpu.getTropa() instanceof Caballero) {
+                AudioClip sonidoEmpate;
+                sonidoEmpate = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Empate.wav"));
+                sonidoEmpate.play();
                 JOptionPane.showMessageDialog(null, "Caballero V.S Caballero \n EMPATE");
                 //
                 auxju = auxju.getAtras();
@@ -715,6 +722,9 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                     salir = 1;
                 }
             } else if (auxju.getTropa() instanceof Mago && auxcpu.getTropa() instanceof Mago) {
+                AudioClip sonidoEmpate;
+                sonidoEmpate = java.applet.Applet.newAudioClip(getClass().getResource("/proyecto_tower_defense/Empate.wav"));
+                sonidoEmpate.play();
                 JOptionPane.showMessageDialog(null, "Mago V.S Mago \n EMPATE");
                 //
                 auxju = auxju.getAtras();
@@ -800,8 +810,6 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 minutos = 0;
                 horas = 0;
                 JOptionPane.showMessageDialog(this, "GAME OVER");
-                
-                
 
             } else if (castilloCPU.getPuntosdeVida() == 0) {
                 AudioClip sonidoWin;
@@ -813,8 +821,7 @@ public class Interfaz_Grafica_Juego extends javax.swing.JFrame {
                 minutos = 0;
                 horas = 0;
                 JOptionPane.showMessageDialog(this, "YOU WIN");
-                
-                
+
             }
             contador = 1;
             jLabel6.setIcon(null);

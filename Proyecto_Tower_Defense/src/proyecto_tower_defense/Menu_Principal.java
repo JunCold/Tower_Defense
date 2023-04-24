@@ -32,15 +32,20 @@ public class Menu_Principal extends javax.swing.JFrame {
         BTNNuevaPartida = new javax.swing.JButton();
         BTNSalir = new javax.swing.JButton();
         BTNInstrucciones1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
+        jLabel1.setBackground(new java.awt.Color(51, 255, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
         jLabel1.setText("¡Bienvenido a Tower Defense!");
 
+        BTNNuevaPartida.setBackground(new java.awt.Color(0, 102, 102));
         BTNNuevaPartida.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BTNNuevaPartida.setForeground(new java.awt.Color(153, 255, 153));
         BTNNuevaPartida.setText("Crear una nueva partida");
         BTNNuevaPartida.setBorder(null);
         BTNNuevaPartida.setBorderPainted(false);
@@ -51,7 +56,9 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
+        BTNSalir.setBackground(new java.awt.Color(0, 102, 102));
         BTNSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BTNSalir.setForeground(new java.awt.Color(153, 255, 153));
         BTNSalir.setText("Salir");
         BTNSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BTNSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +67,9 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
+        BTNInstrucciones1.setBackground(new java.awt.Color(0, 102, 102));
         BTNInstrucciones1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BTNInstrucciones1.setForeground(new java.awt.Color(153, 255, 153));
         BTNInstrucciones1.setText("Instrucciones");
         BTNInstrucciones1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BTNInstrucciones1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +77,10 @@ public class Menu_Principal extends javax.swing.JFrame {
                 BTNInstrucciones1ActionPerformed(evt);
             }
         });
+
+        jLabel2.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 204, 51));
+        jLabel2.setText("The Game");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,13 +98,19 @@ public class Menu_Principal extends javax.swing.JFrame {
                         .addGap(123, 123, 123)
                         .addComponent(jLabel1)))
                 .addContainerGap(125, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(213, 213, 213))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(12, 12, 12)
                 .addComponent(BTNNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BTNInstrucciones1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,6 +186,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JButton BTNNuevaPartida;
     private javax.swing.JButton BTNSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
